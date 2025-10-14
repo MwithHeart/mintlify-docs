@@ -1,0 +1,100 @@
+---
+title: "Quickstart"
+description: "Fetch design shots in minutes"
+---
+
+Welcome, developer! 👋  
+The Dribbble API lets you turn creative design data into interactive experiences; from fetching shots to building design galleries or analytics dashboards.
+
+In this guide, you’ll make your first authenticated API request in just a few minutes.
+
+---
+### 1. Create a developer account
+
+<AccordionGroup>
+  <Accordion title="Register your app">
+    1. Create an account on the [Dribbble page](https://dribbble.com/session/new). Or sign in.  
+    2. Go to `https://dribbble.com/account/applications`.
+    3. On the side menu, click **Applications** and select **Register a New Application**.  
+    3. Fill in your app details including your **callback URL**.  
+    4. Click **Create Your Application**.  
+
+    <Tip>
+      The callback URL is where Dribbble redirects users after they authorize your app.  
+      Example: 
+      - Website URL: `https://myportfolio.com`
+      - Callback URL: `https://myportfolio.com/auth/dribbble/callback`
+    </Tip>
+  </Accordion>
+</AccordionGroup>
+
+When you create your app, the **Client ID** and **Client Secret** show up at the bottom of the page, keep these safe.
+
+
+
+## 2. Get your access token
+
+<AccordionGroup>
+  <Accordion title="You’ll need an access token to make API requests">
+    Check the [Authentication guide](./authentication) for a step-by-step guide.
+    Once you get your credentials, use the following cURL request to get an access token:
+
+      ```bash
+      curl -X POST "https://dribbble.com/oauth/token" \
+        -d client_id=YOUR_CLIENT_ID \
+        -d client_secret=YOUR_CLIENT_SECRET \
+        -d code=AUTHORIZATION_CODE \
+        -d redirect_uri=YOUR_CALLBACK_URL
+      ````
+
+    Expected response:
+
+      ```json
+      {
+        "access_token": "abc123...",
+        "token_type": "bearer"
+      }
+      ```
+  </Accordion>
+</AccordionGroup>
+
+  Save your `access_token`. You’ll use it in all subsequent API calls.
+
+## 3. Make your first request
+
+<AccordionGroup>
+  <Accordion title="Let’s fetch the authenticated user’s Dribbble profile">
+      ```bash
+    curl -H "Authorization: Bearer YOUR_ACCESS_TOKEN" \
+      https://api.dribbble.com/v2/user
+    ```
+
+  If successful, you should get a `200 OK` response like this:
+
+    ```json
+    {
+      "id": 123,
+      "name": "Jane Doe",
+      "username": "janedesigns"
+    }
+    ```
+  </Accordion>
+</AccordionGroup>
+✅ **Congratulations!**
+You just made your first successful API call using the Dribbble API.
+
+---
+## Next steps
+
+Now that you have your token running, explore these key features:
+
+<CardGroup cols={2}>
+
+<Card title="Go to Authentication" icon="pen-to-square" href="/essentials/markdown">
+  Learn how authentication works in details in the [Authentication Guide](./authentication).
+</Card>
+
+<Card title="Check Shots" icon="palette" href="/essentials/settings">
+  Check the [Shots API] to fetch or display Dribbble design shots.
+</Card>
+</CardGroup>

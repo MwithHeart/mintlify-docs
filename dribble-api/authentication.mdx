@@ -1,0 +1,148 @@
+---
+title: "Authentication"
+description: "How to authenticate and get an access token"
+---
+
+The Dribbble API uses *OAuth 2.0* to securely authenticate applications.
+This guide walks you through how to register your app, authorize users, and obtain your access token.
+
+
+## Overview
+
+OAuth 2.0 is an industry-standard protocol for secure delegated access.  
+Instead of sharing passwords, users grant your app permission to act on their behalf using **tokens**.
+
+Here’s how the Dribbble OAuth flow works:
+
+1. Register your app to get a `Client ID` and `Client Secret`.  
+2. Direct users to the *authorization URL*.
+3. Receive a *code* when they approve your app.  
+4. Exchange that code for an *access token*.  
+5. Use the token to make authenticated requests.  
+
+
+### Step 1: Register your application
+    1. Create an account on the Dribble home page or login.
+    2. Visit the [Applications page](https://dribbble.com/account/applications/new).  
+    3. Select Applications from the side menu
+    2. Click **Register a New Application**.  
+    3. Enter your app details and **callback URL**.  
+    4. Click **Create Your Application**.  
+    5. Your **Client ID** and **Client Secret** show up at the bottom of the page. Copy them and keep them safe.
+
+    <Tip>
+    Your callback URL is the endpoint where Dribbble redirects users after they approve access.  
+    Example: `https://myportfolio.com/auth/dribbble/callback`
+    </Tip>
+    
+---
+
+### Step 2: Request user authorization
+    1. Redirect users to the following URL:
+
+        ```
+        https://dribbble.com/oauth/authorize?client_id=YOUR_CLIENT_ID
+        ```
+
+
+    2. Once the user approves, Dribbble redirects them to your callback URL with a `code`:
+
+        ``` 
+        https://your-callback-url?code=9892aebf...
+        ```
+
+---
+
+### Step 3: Exchange the code for an access token
+
+    Use your **Client ID**, **Client Secret**, and **Authorization Code** to request a token.
+
+        ```bash
+        curl -X POST "https://dribbble.com/oauth/token" \
+        -d client_id=YOUR_CLIENT_ID \
+        -d client_secret=YOUR_CLIENT_SECRET \
+        -d code=AUTHORIZATION_CODE \
+        -d redirect_uri=YOUR_CALLBACK_URL
+        ````
+
+    You’ll receive a JSON response like:
+
+        ```json
+        {
+        "access_token": "abc123...",
+        "token_type": "bearer"
+        }
+        ```
+
+    <Note>
+    Store your access token securely. Do not expose it publicly (for example, in frontend code or GitHub repos).
+    </Note>
+
+---
+
+### Step 4: Use the access token
+
+    Include your token in the request header:
+
+        ```
+        Authorization: Bearer YOUR_ACCESS_TOKEN
+        ```
+
+    Example:
+
+        ```bash
+        curl -H "Authorization: Bearer YOUR_ACCESS_TOKEN" \
+        https://api.dribbble.com/v2/user
+        ```
+
+    Response:
+
+        ```json
+        {
+        "id": 123,
+        "name": "Jane Doe",
+        "username": "janedesigns"
+        }
+        ```
+
+---
+
+## Handle common errors
+
+| Error             | Description                   | How to fix                         |
+| ----------------- | ----------------------------- | ---------------------------------- |
+| `invalid_client`  | Incorrect Client ID or Secret | Double-check your app credentials  |
+| `invalid_grant`   | Code expired or reused        | Request a new authorization code   |
+| `unauthorized`    | Token missing or invalid      | Include the `Authorization` header |
+| `400 Bad Request` | Missing required parameter    | Verify your query parameters       |
+
+---
+
+### Token management tips
+
+- **Tokens typically don’t expire quickly**, but can be revoked anytime via your Dribbble account.
+- Always **use HTTPS** to keep tokens secure in transit.
+
+---
+
+### Next steps
+
+    <CardGroup cols={2}>
+
+    <Card title="Quickstart" icon="square-code" href="/essentials/code">
+    Try your first API request.
+    </Card>
+
+    <Card title="Check shots" icon="palette" href="/essentials/settings">
+    Check the [Shots API] to fetch or display design shots.
+    </Card>
+
+    </CardGroup>
+
+
+
+
+
+
+
+

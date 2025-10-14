@@ -1,0 +1,133 @@
+---
+title: "Quickstart"
+description: "Fetch design shots in minutes"
+---
+
+## Get started in three steps
+
+Hello there, developer! 👋
+
+Welcome to the Dribble API documentation, where ideas turn into interactive apps. 
+
+### Step 1: Register an app
+
+1. Create a developer account
+
+
+
+
+
+<AccordionGroup>
+  <Accordion title="Create a [Dribble account](https://dribbble.com/account/applications/new) or login.">
+      Click the [link](https://dribbble.com/account/applications/new)
+    
+  </Accordion>
+  <Accordion icon="rectangle-terminal" title="Register an application">
+    1. In the side menu, select **Applications**
+    2. In the Developers section, select **Register a New Application**
+    3. Fill the form on the page with your app details and add the callback URL yourself
+    
+  </Accordion>
+</AccordionGroup>
+
+### Step 2: Deploy your changes
+
+<AccordionGroup>
+  <Accordion icon="github" title="Install our GitHub app">
+    Install the Mintlify GitHub app from your [dashboard](https://dashboard.mintlify.com/settings/organization/github-app).
+    
+    Our GitHub app automatically deploys your changes to your docs site, so you don't need to manage deployments yourself.
+</Accordion>
+<Accordion icon="palette" title="Update your site name and colors">
+    For a first change, let's update the name and colors of your docs site.
+
+    1. Open `docs.json` in your editor.
+    2. Change the `"name"` field to your project name.
+    3. Update the `"colors"` to match your brand.
+    4. Save and see your changes instantly at `http://localhost:3000`.
+
+    <Tip>Try changing the primary color to see an immediate difference!</Tip>
+  </Accordion>
+</AccordionGroup>
+
+### Step 3: Go live
+
+<Accordion icon="rocket" title="Publish your docs">
+  1. Commit and push your changes.
+  2. Your docs will update and be live in moments!
+</Accordion>
+
+## Next steps
+
+Now that you have your docs running, explore these key features:
+
+<CardGroup cols={2}>
+
+<Card title="Write Content" icon="pen-to-square" href="/essentials/markdown">
+  Learn MDX syntax and start writing your documentation.
+</Card>
+
+<Card title="Customize style" icon="palette" href="/essentials/settings">
+  Make your docs match your brand perfectly.
+</Card>
+
+<Card title="Add code examples" icon="square-code" href="/essentials/code">
+  Include syntax-highlighted code blocks.
+</Card>
+
+<Card title="API documentation" icon="code" href="/api-reference/introduction">
+  Auto-generate API docs from OpenAPI specs.
+</Card>
+
+</CardGroup>
+
+<Note>
+  **Need help?** See our [full documentation](https://mintlify.com/docs) or join our [community](https://mintlify.com/community).
+</Note>
+
+
+
+
+### Step 3: Get the token
+<AccordionGroup>
+  <Accordion title="Get your code">
+    1. After authorizing, you will be redirected to a URL with this format: `http://callback_url?code=`
+      <Note> The http://callback_url will be the callback URL you entered when you registered your app. </Note>
+    2. Copy the string that comes after *?code=* till the the end of the URL. 
+    3. That is the `Code`. Paste it in a secure place as you will need it. 
+  </Accordion>
+  <Accordion icon="rocket" title="Get the token using Postman">
+    1. On Postman, create a new request.
+    2. Change the HTTP Method to **POST**. 
+    3. Paste the URL *https://dribbble.com/oauth/token*
+    4. In the **Params** tab, add the keys:  
+        - client_id,
+        - client_secret
+        - code  
+        - redirect_uri (optional)
+    5. Add their values in the fields in front of them
+    6. Click **Send**
+    7. Your token shows up as a JSON response.
+  </Accordion>
+</AccordionGroup>
+
+Using CURL: curl --location --request POST 'https://dribbble.com/oauth/token?client_id=UoookhqP4QvQpbHhhu0GdG6aoW-j8XvEhwEKJB_ujs8&client_secret=_dCNbUkFPeBlIZ_fhXPKFSLle-ndMsul1G768ehuNTU&code=shWaLBkxSTtydlIbtIu53MTNIgbKizNYJE2rji8VroA&redirect_uri=https%3A%2F%2Fsubstack.com%2F%40mwithheart%2Fauth%2Fdribbble%2Fcallback%2Fadulthood-is-hard%3Fr%3D46n7c9%26utm_campaign%3Dpost%26utm_medium%3Dweb'
+
+### Step 4: Get a user's details
+#### Base URL
+https://api.dribbble.com/v2
+
+1. Paste the base URL `https://api.dribbble.com/v2`
+
+3. Changethe HTTP method to GET
+
+Get a user's details
+1. USe a GET request
+2. Use the base URL `https://api.dribbble.com/v2`. Add endpoint `/user` to the end
+3. In the header, add: `access_token`. 
+4. In  the field in front of it, paste your access token generated earlier. 
+
+You should get a status code of 200 with details of a user.
+
+## Congratulations
+*You have a basic Checkout integration working. Now learn how to customize the appearance of your checkout page and automate tax collection.*

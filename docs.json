@@ -66,6 +66,28 @@
             ]
           }
         ]
+      },
+      {
+        "tab": "Dribble API",
+        "groups": [
+          {
+            "group": "Dribble API docs",
+            "pages": [
+              "dribble-api/introduction", 
+              "dribble-api/quickstart",
+              "dribble-api/authentication"
+            ]
+          },
+          {
+            "group": "Endpoints",
+            "pages": [
+              "dribble-api/endpoint/get",
+              "dribble-api/endpoint/create",
+              "dribble-api/endpoint/delete",
+              "dribble-api/endpoint/webhook"
+            ]
+          }
+        ]
       }
     ],
     "global": {
