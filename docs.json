@@ -11,62 +11,19 @@
   "navigation": {
     "tabs": [
       {
-        "tab": "Guides",
+        "tab": "API Docs Library",
         "groups": [
           {
-            "group": "Getting started",
+            "group": "Docs Library Overview",
             "pages": [
               "index",
-              "quickstart",
-              "development"
-            ]
-          },
-          {
-            "group": "Customization",
-            "pages": [
-              "essentials/settings",
-              "essentials/navigation"
-            ]
-          },
-          {
-            "group": "Writing content",
-            "pages": [
-              "essentials/markdown",
-              "essentials/code",
-              "essentials/images",
-              "essentials/reusable-snippets"
-            ]
-          },
-          {
-            "group": "AI tools",
-            "pages": [
-              "ai-tools/cursor",
-              "ai-tools/claude-code",
-              "ai-tools/windsurf"
+              "quickstart"             
             ]
           }
+
         ]
       },
-      {
-        "tab": "API reference",
-        "groups": [
-          {
-            "group": "API documentation",
-            "pages": [
-              "api-reference/introduction"
-            ]
-          },
-          {
-            "group": "Endpoint examples",
-            "pages": [
-              "api-reference/endpoint/get",
-              "api-reference/endpoint/create",
-              "api-reference/endpoint/delete",
-              "api-reference/endpoint/webhook"
-            ]
-          }
-        ]
-      },
+   
       {
         "tab": "Dribble API",
         "groups": [
@@ -77,33 +34,12 @@
               "dribble-api/quickstart",
               "dribble-api/authentication"
             ]
-          },
-          {
-            "group": "Endpoints",
-            "pages": [
-              "dribble-api/endpoint/get",
-              "dribble-api/endpoint/create",
-              "dribble-api/endpoint/delete",
-              "dribble-api/endpoint/webhook"
-            ]
           }
+  
         ]
       }
-    ],
-    "global": {
-      "anchors": [
-        {
-          "anchor": "Documentation",
-          "href": "https://mintlify.com/docs",
-          "icon": "book-open-cover"
-        },
-        {
-          "anchor": "Blog",
-          "href": "https://mintlify.com/blog",
-          "icon": "newspaper"
-        }
-      ]
-    }
+    ]
+    
   },
   "logo": {
     "light": "/logo/light.svg",
@@ -136,9 +72,8 @@
   },
   "footer": {
     "socials": {
-      "x": "https://x.com/mintlify",
-      "github": "https://github.com/mintlify",
-      "linkedin": "https://linkedin.com/company/mintlify"
+      "github": "https://github.com/mwithheart/mintlify-docs/tree/main",
+      "linkedin": "https://linkedin.com/in/yusuff-mariam"
     }
   }
 }
