@@ -1,43 +1,34 @@
-# Mintlify Starter Kit
+# API Documentation Library
 
-Use the starter kit to get your docs deployed and ready to customize.
+Welcome to Mariam's **API Documentation Hub**, a curated space where I rewrite, analyze, and create **developer-focused documentation** using real-world APIs.
 
-Click the green **Use this template** button at the top of this repo to copy the Mintlify starter kit. The starter kit contains examples with
+This hub highlights my work as a **Technical Writer specializing in API documentation**, with an emphasis on clarity, structure, and developer experience.
 
-- Guide pages
-- Navigation
-- Customizations
-- API reference pages
-- Use of popular components
 
-**[Follow the full quickstart guide](https://starter.mintlify.com/quickstart)**
+## What You’ll Find Here
 
-## Development
+Each project showcases how I approach technical writing through the lens of developer empathy and documentation design.
 
-Install the [Mintlify CLI](https://www.npmjs.com/package/mint) to preview your documentation changes locally. To install, use the following command:
+- **✍️ Clarity-First Writing:** Turning complex API concepts into actionable, easy-to-follow guides.  
+- **⚙️ Information Architecture:** Structuring docs for smooth navigation and logical flow.  
+- **🧩 Tool Proficiency:** Using Mintlify, Postman, Git, and cURL to test and document APIs.  
+- **🚀 Developer Experience:** Writing docs that explain not just *what* an API does — but *how to use it effectively*.  
 
-```
-npm i -g mint
-```
+---
 
-Run the following command at the root of your documentation, where your `docs.json` is located:
+## 📚 Featured Projects
 
-```
-mint dev
-```
+| Project | Description | Stack |
+|----------|--------------|--------|
+| [Dribbble API](./dribbble-api/quickstart) | Authentication & Quickstart rewrite focusing on onboarding flow and clarity. | Mintlify, Markdown |
+| *Upcoming:* Payvantage API | Focused on payment integration & error handling sections. | Mintlify, Postman |
 
-View your local preview at `http://localhost:3000`.
 
-## Publishing changes
 
-Install our GitHub app from your [dashboard](https://dashboard.mintlify.com/settings/organization/github-app) to propagate changes from your repo to your deployment. Changes are deployed to production automatically after pushing to the default branch.
+## About This Space
 
-## Need help?
+This hub complements my [main portfolio](https://writetech-accelerator-portfolio-mar.vercel.app/), where I document my broader technical writing journey.  
+Here, I focus purely on **API documentation projects** to demonstrate how I merge **technical accuracy**, **information architecture**, and **clear writing** to make developer learning faster and more intuitive.
 
-### Troubleshooting
-
-- If your dev environment isn't running: Run `mint update` to ensure you have the most recent version of the CLI.
-- If a page loads as a 404: Make sure you are running in a folder with a valid `docs.json`.
-
-### Resources
-- [Mintlify documentation](https://mintlify.com/docs)
+> 💬 *“Good documentation doesn’t just explain features; it guides users to success.”*  
+> — Mariam Yusuff
