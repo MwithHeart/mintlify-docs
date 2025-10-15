@@ -14,10 +14,9 @@
         "tab": "API Docs Library",
         "groups": [
           {
-            "group": "Docs Library Overview",
+            "group": "API Docs Library Overview",
             "pages": [
-              "index",
-              "quickstart"             
+              "intro"             
             ]
           }
 

@@ -21,7 +21,8 @@
               "development"
             ]
           }
-     /*     {
+     /*     
+     {
             "group": "Customization",
             "pages": [
               "essentials/settings",
