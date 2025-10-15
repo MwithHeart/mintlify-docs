@@ -59,10 +59,10 @@ Here’s how the Dribbble OAuth flow works:
 
         ```bash
         curl -X POST "https://dribbble.com/oauth/token" \
-        -d client_id=YOUR_CLIENT_ID \
-        -d client_secret=YOUR_CLIENT_SECRET \
-        -d code=AUTHORIZATION_CODE \
-        -d redirect_uri=YOUR_CALLBACK_URL
+            -d client_id=YOUR_CLIENT_ID \
+            -d client_secret=YOUR_CLIENT_SECRET \
+            -d code=AUTHORIZATION_CODE \
+            -d redirect_uri=YOUR_CALLBACK_URL
         ````
 
     You’ll receive a JSON response like:
@@ -80,9 +80,9 @@ Here’s how the Dribbble OAuth flow works:
 
 ---
 
-### Step 4: Use the access token
+### Step 4: Use the access token  - Fix the code here
 
-    Include your token in the request header:
+    Include your token in the query parameter:
 
         ```
         Authorization: Bearer YOUR_ACCESS_TOKEN
@@ -111,11 +111,11 @@ Here’s how the Dribbble OAuth flow works:
 
 | Error             | Description                   | How to fix                         |
 | ----------------- | ----------------------------- | ---------------------------------- |
-| `invalid_client`  | Incorrect Client ID or Secret | Double-check your app credentials  |
+| `invalid_client`  | Incorrect Client ID or Secret | Double check the client_id and client_secret to make sure they are correct | 
 | `invalid_grant`   | Code expired or reused        | Request a new authorization code   |
 | `unauthorized`    | Token missing or invalid      | Include the `Authorization` header |
 | `400 Bad Request` | Missing required parameter    | Verify your query parameters       |
-
+Redirect URI Mismatch - provide a redirect_uri that matches what you registered or leave out this parameter to use the default one registered with your application.3
 ---
 
 ### Token management tips
@@ -129,14 +129,9 @@ Here’s how the Dribbble OAuth flow works:
 
     <CardGroup cols={2}>
 
-    <Card title="Quickstart" icon="square-code" href="/essentials/code">
+    <Card title="Quickstart" icon="square-code" href="./quickstart">
     Try your first API request.
     </Card>
-
-    <Card title="Check shots" icon="palette" href="/essentials/settings">
-    Check the [Shots API] to fetch or display design shots.
-    </Card>
-
     </CardGroup>
 
 

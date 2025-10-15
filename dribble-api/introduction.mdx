@@ -1,33 +1,97 @@
 ---
 title: 'Welcome'
-description: 'Example section for showcasing API endpoints'
+description: 'Dribbble API Documentation — Authentication & Quickstart (Rewritten for Clarity and Developer Flow)'
 ---
 
-<Note>
-  If you're not looking to build API reference documentation, you can delete
-  this section by removing the api-reference folder.
-</Note>
 
-## Welcome
+### Overview
 
-There are two ways to build API documentation: [OpenAPI](https://mintlify.com/docs/api-playground/openapi/setup) and [MDX components](https://mintlify.com/docs/api-playground/mdx/configuration). For the starter kit, we are using the following OpenAPI specification.
+A reverse-engineered documentation project where I analyzed and rewrote the **Authentication** and **Quickstart** sections of the [Dribbble API](https://developer.dribbble.com), focusing on improving clarity, developer onboarding, and content structure using Docusaurus.
 
-<Card
-  title="Plant Store Endpoints"
-  icon="leaf"
-  href="https://github.com/mintlify/starter/blob/main/api-reference/openapi.json"
->
-  View the OpenAPI specification file
-</Card>
 
-## Authentication
+### Objective
 
-All API endpoints are authenticated using Bearer tokens and picked up from the specification file.
+The goal was to evaluate how effectively Dribbble’s original API documentation helped developers start quickly, and to **redesign it with clearer steps, better structure, and modern documentation practices** (e.g. using examples, logical grouping, and progressive onboarding).
 
-```json
-"security": [
-  {
-    "bearerAuth": []
-  }
-]
-```
+
+
+### My Role
+
+* Technical Writer (solo project)
+* Responsible for research, information architecture, markdown authoring, and front-end doc presentation.
+
+
+### **Tools & Stack**
+
+* **Docusaurus** - static site generator
+* **Markdown + MDX** - for content formatting
+* **Mintlify** - for deployment
+* **Git + VS Code** - version control and workflow
+
+
+### **Process**
+
+1. **Analyzed the Original Docs**
+
+   * Noted unclear navigation
+   * Observed inconsistent tone between pages
+
+2. **Rewrote for Clarity**
+   * Created a **Quickstart** page guiding new developers in less than 5 minutes.
+   * Broke authentication down into **simple steps** with sample requests/responses.
+   * Added a “Before You Begin” section to improve flow.
+
+3. **Improved Structure**
+
+   * Added breadcrumbs and internal links for better navigation.
+   * Used consistent headings and spacing (following Stripe’s and OpenAI’s structure).
+
+4. **Published + Iterated**
+
+   * Deployed on Vercel.
+   * Shared online for feedback from fellow technical writers and developers.
+
+---
+
+### **Before vs After (Key Improvements)**
+
+| Feature             | Original Docs     | Rewritten Version                                 |
+| ------------------- | ----------------- | ------------------------------------------------- |
+| **Quickstart flow** | 6 steps scattered | Single-page linear guide                          |
+| **Code examples**   | Limited           | Multi-language with inline responses              |
+| **Tone**            | Formal & vague    | Action-oriented, developer-friendly               |
+| **Navigation**      | Sparse links      | Linked structure (Auth → First Call → Next Steps) |
+
+---
+
+### **Outcome**
+
+✅ Developers can now authenticate and make their first successful API call in **under 5 minutes**.
+
+
+---
+
+### **View the Project**
+
+* 🔗 **Live Demo:** [your-vercel-link-here]
+* 📂 **GitHub Repo:** [repo-link]
+* 📝 **Docs Pages:**
+
+  * [Quickstart Page](#)
+  * [Authentication Page](#)
+
+---
+
+### **Reflection**
+
+This project helped me understand:
+
+* How to structure docs for *progressive onboarding*.
+* The importance of clear, action-driven instructions in API docs.
+* How developer empathy drives documentation design.
+
+Next, I plan to apply similar techniques to a **FinTech API (like Interswitch or Flutterwave)** to deepen my understanding of authentication flows and webhook integrations.
+
+---
+
+
