@@ -1,7 +1,7 @@
 {
   "$schema": "https://mintlify.com/docs.json",
   "theme": "mint",
-  "name": "Mint Starter Kit",
+  "name": "API Docs Hub",
   "colors": {
     "primary": "#16A34A",
     "light": "#07C983",
@@ -16,7 +16,7 @@
           {
             "group": "API Docs Library Overview",
             "pages": [
-              "intro"             
+              "index"             
             ]
           }
 
@@ -47,8 +47,8 @@
   "navbar": {
     "links": [
       {
-        "label": "Support",
-        "href": "mailto:hi@mintlify.com"
+        "label": "Email",
+        "href": "mariamyusuff0000@gmail.com"
       }
     ],
     "primary": {
