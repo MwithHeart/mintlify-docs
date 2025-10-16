@@ -21,7 +21,7 @@ Here’s how the Dribbble OAuth flow works:
 5. Use the token to make authenticated requests.  
 
 
-### Step 1: Register your application
+#### Step 1: Register your application
     1. Create an account on the Dribble home page or login.
     2. Visit the [Applications page](https://dribbble.com/account/applications/new).  
     3. Select Applications from the side menu
@@ -35,9 +35,7 @@ Here’s how the Dribbble OAuth flow works:
     Example: `https://myportfolio.com/auth/dribbble/callback`
     </Tip>
     
----
-
-### Step 2: Request user authorization
+#### Step 2: Request user authorization
     1. Redirect users to the following URL:
 
         ```
@@ -51,9 +49,7 @@ Here’s how the Dribbble OAuth flow works:
         https://your-callback-url?code=9892aebf...
         ```
 
----
-
-### Step 3: Exchange the code for an access token
+#### Step 3: Exchange the code for an access token
 
     Use your **Client ID**, **Client Secret**, and **Authorization Code** to request a token.
 
@@ -78,9 +74,7 @@ Here’s how the Dribbble OAuth flow works:
     Store your access token securely. Do not expose it publicly (for example, in frontend code or GitHub repos).
     </Note>
 
----
-
-### Step 4: Use the access token  - Fix the code here
+#### Step 4: Use the access token  - Fix the code here
 
     Include your token in the query parameter:
 
@@ -105,9 +99,7 @@ Here’s how the Dribbble OAuth flow works:
         }
         ```
 
----
-
-## Handle common errors
+### Handle common errors
 
 | Error             | Description                   | How to fix                         |
 | ----------------- | ----------------------------- | ---------------------------------- |
@@ -115,18 +107,14 @@ Here’s how the Dribbble OAuth flow works:
 | `invalid_grant`   | Code expired or reused        | Request a new authorization code   |
 | `unauthorized`    | Token missing or invalid      | Include the `Authorization` header |
 | `400 Bad Request` | Missing required parameter    | Verify your query parameters       |
-Redirect URI Mismatch - provide a redirect_uri that matches what you registered or leave out this parameter to use the default one registered with your application.3
----
+| `Redirect URI Mismatch` | Redirect URI doesn't match the previous one | Provide a redirect_uri that matches what you registered or leave out this parameter to use the default one registered with your application |
 
 ### Token management tips
-
 - **Tokens typically don’t expire quickly**, but can be revoked anytime via your Dribbble account.
 - Always **use HTTPS** to keep tokens secure in transit.
 
----
 
 ### Next steps
-
     <CardGroup cols={2}>
 
     <Card title="Quickstart" icon="square-code" href="./quickstart">

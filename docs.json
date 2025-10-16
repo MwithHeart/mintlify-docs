@@ -3,20 +3,21 @@
   "theme": "mint",
   "name": "API Docs Hub",
   "colors": {
-    "primary": "#16A34A",
-    "light": "#07C983",
+    "primary": "#8a0f0f",
+    "light": "#981010",
     "dark": "#15803D"
   },
   "favicon": "/favicon.svg",
   "navigation": {
     "tabs": [
       {
-        "tab": "API Docs Library",
+        "tab": "API Docs Hub",
         "groups": [
           {
-            "group": "API Docs Library Overview",
+            "group": "API Docs Hub Overview",
             "pages": [
-              "index"             
+              "index",
+              "about-me"             
             ]
           }
 
@@ -38,23 +39,22 @@
         ]
       }
     ]
-    
   },
   "logo": {
-    "light": "/logo/light.svg",
-    "dark": "/logo/dark.svg"
+    "light": "/logo/MwithHeart.svg",
+    "dark": "/logo/MwithHeart.svg"
   },
   "navbar": {
     "links": [
       {
-        "label": "Email",
-        "href": "mailto:hi@mintlify.com"
+        "label": "GitHub",
+        "href": "https://github.com/mwithheart/mintlify-docs"
       }
     ],
     "primary": {
       "type": "button",
-      "label": "Dashboard",
-      "href": "https://dashboard.mintlify.com"
+      "label": "Hire me",
+      "href": "mailto:mariamyusuff0000@gmail.com"
     }
   },
   "contextual": {
