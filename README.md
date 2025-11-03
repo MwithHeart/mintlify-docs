@@ -21,7 +21,7 @@ Each project showcases how I approach technical writing through the lens of deve
 | Project | Description | Stack |
 |----------|--------------|--------|
 | [Dribbble API](./dribbble-api/quickstart) | Authentication & Quickstart rewrite focusing on onboarding flow and clarity. | Mintlify, Markdown |
-| *Upcoming:* Payvantage API | Focused on payment integration & error handling sections. | Mintlify, Postman |
+| *Upcoming:* RexPay API | Focused on payment integration & error handling sections. | Mintlify, Postman |
 
 
 
