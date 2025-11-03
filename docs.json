@@ -37,6 +37,19 @@
           }
   
         ]
+      },  
+      {
+        "tab": "RexPay API",
+        "groups": [
+          {
+            "group": "RexPay API docs",
+            "pages": [
+              "rexpay-api/introduction", 
+              "rexpay-api/welcome"
+            ]
+          }
+  
+        ]
       }
     ]
   },
