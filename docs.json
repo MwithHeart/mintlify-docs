@@ -28,9 +28,14 @@
         "tab": "Dribble API",
         "groups": [
           {
-            "group": "Dribble API docs",
+            "group": "Opening",
             "pages": [
-              "dribble-api/introduction", 
+              "dribble-api/introduction"
+            ]
+          },
+          {
+            "group": "Restructured pages",
+            "pages": [
               "dribble-api/quickstart",
               "dribble-api/authentication"
             ]
@@ -42,9 +47,14 @@
         "tab": "RexPay API",
         "groups": [
           {
-            "group": "RexPay API docs",
+            "group": "Opening",
             "pages": [
-              "rexpay-api/introduction", 
+              "rexpay-api/introduction"
+            ]
+          },
+          {
+            "group": "Restructured pages",
+            "pages": [ 
               "rexpay-api/welcome"
             ]
           }
