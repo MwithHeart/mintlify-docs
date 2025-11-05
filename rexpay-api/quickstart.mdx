@@ -1,0 +1,149 @@
+---
+title: "Quickstart"
+description: "..."
+---
+
+## Get started in four steps
+
+Hello there, developer! 👋
+
+Welcome to the RexPay API documentation, where ideas turn into interactive apps. 
+
+### Step 1: Create an account
+
+1. Create an account
+2. Login to your account and complete your profile. 
+3. Scroll down the menu and select **Developer Tools**
+4. The page shows your **Secret Key** and **Base URL**. Keep your key safe
+<AccordionGroup>
+  <Accordion title="Create a developer account">
+      Create a [RexPay account](https://www.myrexpay.ng/signup) or login.
+    
+  </Accordion>
+  
+  <Accordion icon="rectangle-terminal" title="Register your app">
+  Upon signing up, you will have access to the test environment.
+
+
+
+
+
+
+
+
+    1. In the new dashboard, click the side menu and select **Applications**.
+    3. In the Developers section, select **Register a New Application**
+    4. Fill the form on the page with your app details and the callback URL.
+    5. Click **Create Your Application**
+    
+    <Tip>
+    The callback URL is the URL to which Dribbble will redirect users after they authorize your app.
+    For example:  
+    - Website URL: https://myportfolio.com
+
+    - Callback URL: https://myportfolio.com/auth/dribbble/callback
+    </Tip>
+  </Accordion>
+</AccordionGroup>
+
+### Step 2: Get an access token
+
+<AccordionGroup>
+  <Accordion icon="github" title="Get your `Client ID` and `Client Secret`">
+    When you click **Create Your Application**, your `Client ID` and `Client Secret` show at the bottom of the page.
+    
+    <Tip> These are valuable details that you should keep safe for later </Tip>
+    
+  </Accordion>
+  <Accordion icon="palette" title="Get authorization">
+    1. Sign in to your dribble account
+    2. In a new window, go to the following url:  ```https://dribbble.com/oauth/authorize?client_id=CLIENT_ID``` 
+      <Note> Replace *CLIENT_ID* with the Client ID you got after registering your app. </Note>
+    3. An authorization page shows with your registered app name.
+    4. Select **Authorize**
+  </Accordion>
+</AccordionGroup>
+
+
+### Step 3: Get the token
+<AccordionGroup>
+  <Accordion title="Get your code">
+    1. After authorizing, you will be redirected to a URL with this format: `http://callback_url?code=`
+      <Note> The http://callback_url will be the callback URL you entered when you registered your app. </Note>
+    2. Copy the string that comes after *?code=* till the the end of the URL. 
+    3. That is the `Code`. Paste it in a secure place as you will need it. 
+  </Accordion>
+  <Accordion icon="rocket" title="Get the token using Postman">
+    1. On Postman, create a new request.
+    2. Change the HTTP Method to **POST**. 
+    3. Paste the URL *https://dribbble.com/oauth/token*
+    4. In the **Params** tab, add the keys:  
+        - client_id,
+        - client_secret
+        - code  
+        - redirect_uri (optional)
+    5. Add their values in the fields in front of them
+    6. Click **Send**
+    7. Your token shows up as a JSON response.
+  </Accordion>
+</AccordionGroup>
+
+### Step 4: Get a user's details
+
+
+
+## Next steps
+
+Now that you have your token running, explore these key features:
+
+<CardGroup cols={2}>
+
+<Card title="Write Content" icon="pen-to-square" href="/essentials/markdown">
+  Learn MDX syntax and start writing your documentation.
+</Card>
+
+<Card title="Customize style" icon="palette" href="/essentials/settings">
+  Make your docs match your brand perfectly.
+</Card>
+
+<Card title="Add code examples" icon="square-code" href="/essentials/code">
+  Include syntax-highlighted code blocks.
+</Card>
+
+<Card title="API documentation" icon="code" href="/api-reference/introduction">
+  Auto-generate API docs from OpenAPI specs.
+</Card>
+
+</CardGroup>
+
+<Note>
+  **Need help?** See our [full documentation](https://mintlify.com/docs) or join our [community](https://mintlify.com/community).
+</Note>
+
+
+
+<CardGroup cols={2}>
+
+<Card title="💡 What I Do"" icon="pen-to-square">
+  - Write **API docs** that reduce onboarding time and confusion.  
+  - Build **Docs-as-Code** pipelines (GitHub Actions, CI/CD).  
+  - Organize **developer portals** using Docusaurus & Mintlify.  
+  - Experiment with **AI-powered documentation** and automation tools.
+</Card>
+
+<Card title="🧰 What I Use" icon="palette">
+ `Docusaurus` · `Mintlify` · `OpenAPI` · `Postman`  
+  `GitHub Actions` · `Vale` · `Spectral` · `Markdown`  
+  `CI/CD` · `Git` · `VS Code`  
+</Card>
+
+<Card title="🚀 Current Focus" icon="square-code">
+  - Refining **API documentation workflows** (Mintlify + OpenAPI).  
+  - Writing **developer-friendly docs** for FinTech & SaaS tools.  
+  - Contributing to **open-source** documentation projects.  
+  - Exploring **DevOps documentation automation**.  
+</Card>
+
+</CardGroup>
+
+Next, I plan to apply similar techniques to a **FinTech API (like Interswitch or Flutterwave)** to deepen my understanding of authentication flows and webhook integrations.
