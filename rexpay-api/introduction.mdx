@@ -3,14 +3,14 @@ title: 'Introduction'
 description: 'RexPay API Documentation (Rewritten for Clarity and Developer Flow)'
 ---
 
-A reverse-engineered documentation project where I analyzed and rewrote the ... sections of the [RexPay API documentation](https://payvantage.gitbook.io/payvantage.gitbook.io), focusing on improving clarity, developer onboarding, and content structure using Docusaurus.
+A reverse-engineered documentation project where I analyzed and rewrote some sections of the [RexPay API documentation](https://payvantage.gitbook.io/payvantage.gitbook.io), focusing on improving clarity, developer onboarding, and content structure.
 
 <Note>
 *The pages here are still under construction.*  
 </Note>
 
 ### Objective
-The goal was to evaluate how effectively RexPay's original API documentation helped developers start quickly, and to **redesign it with clearer steps, better structure, and modern documentation practices** (e.g. using examples, logical grouping, and progressive onboarding).
+The goal was to evaluate how effectively RexPay's original API documentation helped developers start quickly, and to **redesign it with clearer steps, better structure, and modern documentation practices** (e.g. using examples, logical grouping, error handling, and progressive onboarding).
 
 ### My Role
 * Technical Writer (solo project)
@@ -27,28 +27,36 @@ The goal was to evaluate how effectively RexPay's original API documentation hel
 1. **Analyzed the Original Docs**
 
    * Noted unclear navigation
-   * Observed unclear information across pages
-
-2. **Rewrote for Clarity**
+   * Observed confusing information across pages
+ 
+2. **Improved Structure**
+   * The actual Quickstartpage is reference-heavy and not task-oriented. 
    * Created a **Quickstart** page guiding new developers faster.
-   * Broke authentication down into **simple steps** with sample requests/responses.
-   
-3. **Improved Structure**
-
    * Used consistent headings and spacing (following Stripe’s and OpenAI’s structure).
 
+3.  **Polished The API Reference Pages**
+   * The API Reference pages are not interactive. 
+   * Most of the reference pages do not touch on errors.
+   * The HTTP verb is not specified.
+   * Endpoints not properly arranged.
+   * Code samples are provided in Javascript only.
+   
 4. **Published + Iterated**
 
    * Deployed on Mintlify.
    * Shared online for feedback from fellow technical writers and developers.
 
+
+
 ### Before vs After (Key Improvements)
 | Feature             | Original Docs     | Rewritten Version                                 |
 | ------------------- | ----------------- | ------------------------------------------------- |
-| **Quickstart flow** | Not available     | Single-page linear guide                          |
-| **Code examples**   | Limited           | Multi-language with inline responses              |
+| **Quickstart flow** | Reference-heavy   | Task-oriented to guide new developers             |
+| **Code examples**   | Limited           | Multi-language with interactive display to test the code         |
 | **Tone**            | Formal & vague    | Action-oriented, developer-friendly               |
 | **Navigation**      | Sparse links      | Linked structure (Auth → First Call → Next Steps) |
+| **Error Handling Page** | Not available | Provided a page dedicated to possible errors that developers may face |
+
 
 ### Outcome
 ✅ Developers can now authenticate and make their first successful API call in a few minutes.
@@ -57,13 +65,12 @@ The goal was to evaluate how effectively RexPay's original API documentation hel
 * **[GitHub Repo](https://github.com/MwithHeart/mintlify-docs/tree/main/dribble-api)**
 * **Docs Pages:**
   * [Quickstart Page](./quickstart)
-  * [Authentication Page](./authentication)
+  * [Error Handling Page](./errors)
+  * [API Reference Page]()
 
 ### Reflection
 This project helped me understand:
-* How to structure docs for *progressive onboarding*.
-* The importance of clear, action-driven instructions in API docs.
-* How developer empathy drives documentation design.
+
 
 
 
