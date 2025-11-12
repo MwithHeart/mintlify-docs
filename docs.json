@@ -54,11 +54,14 @@
           },
           {
             "group": "Restructured pages",
-            "openapi" : "api-reference/openapi.json",
             "pages": [ 
               "rexpay-api/overview",
               "rexpay-api/errors"
             ]
+          },
+          {
+            "group": "API Reference",
+            "openapi" : "api-reference/openapi.json"
           }
         ]
       }
