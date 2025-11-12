@@ -36,7 +36,7 @@
     "/api/pgs/payment/v2/createPayment": {
       "post": {
         "summary": "Create Payment Channel",
-        "description": "This endpoint allows you to  initiate a payment transaction. It is the first endpoint that is called regardless of payment method to be used.",
+        "description": "This endpoint allows you to initiate a payment transaction. It is the first endpoint that is called regardless of payment method to be used.",
         "operationId": "create-payment-channel",
         "requestBody": {
           "required": false,
@@ -115,7 +115,7 @@
                     "externalPaymentReference": {
                       "type": "string",
                       "example": "16661108ZjGG7aY39B",
-                      "description": "External Payment unique reference"
+                      "description": "External payment unique reference"
                     }
                   }
                 }
