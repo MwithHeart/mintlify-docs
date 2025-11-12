@@ -1,9 +1,9 @@
 ---
 title: "Quickstart"
-description: "..."
+description: " "
 ---
 
-## Get started in four steps
+## Get Started In Two Steps
 
 Hello there, developer! 👋
 
@@ -16,15 +16,18 @@ Welcome to the RexPay API documentation, where businesses accept payments seamle
     2. Complete your profile details. 
     3. From the menu, select **Developer Tools**
     4. The page shows your **Secret Key** and **Base URL**. 
-      <Caution> 
-      Store your key securely as an environment variable. DO not share it or commit it to GitHub.
-      </Caution>
+
+      <Note> 
+        Store your key securely as an environment variable. Do not share it or commit it to GitHub.
+      </Note>
   </Accordion>
 </AccordionGroup>
 
-### Step 2: Make Your First API Call
+### Step 2: Make your first API call
 <AccordionGroup>
-  <Accordion title= "Use the **Get Transaction Status** endpoint to check the details of a payment">
+  <Accordion title= "Use an endpoint to check payment details">
+    Use the **Get Transaction Status** endpoint to check payment details.
+
     ```bash
     curl -X POST https://pgs-sandbox.globalaccelerex.com/api/pgs/payment/v2/createPayment \
       -u "your_email@example.com:your_secret_key" \
@@ -58,9 +61,9 @@ Welcome to the RexPay API documentation, where businesses accept payments seamle
 
 ---
 
-## Next steps
+## Next Steps
 
-Now that you have your token running, explore these key features:
+✅ You have successfully made an API call. Now, consider exploring these key features:
 
 <CardGroup cols={2}>
 

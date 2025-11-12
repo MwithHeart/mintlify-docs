@@ -1,20 +1,20 @@
 ---
 title: 'Errors'
-description: 'This page contains all forma of errors you can encounter while using the RexPay API and how to fix them'
+description: 'This page contains all forms of errors you can encounter while using the RexPay API and how to fix them'
 ---
 
 RexPay uses conventional HTTP response codes to indicate the success or failure of an API request. Generally,
-    - 2** Codes indicate success. 
-    - 4** Codes indicate an error due to the details provided 
-    - 5** Codes indicate an error with our servers, these aren't common. 
+    - **2xx** Codes indicate success. 
+    - **4xx** Codes indicate an error due to the details provided 
+    - **5xx** Codes indicate an error with our servers, these aren't common. 
 
 
-### HTTPS codes
+### HTTPS Codes
 | Code | Meaning | Explanation | How to Resolve | 
 | ---  | ------- | ----------- | -------------  |
 | 200	| OK	 | Successful API request | |
 | 400	| Bad Request | The request was not accepted, often due to missing a required parameter | Verify inputs details and include missing or wrong parameter |
 | 401	| Unauthorized	 | Unauthorised access to resource | Check your authentication details for errors. Confirm your access tothe information you want to retrieve |
-402	Request Failed	The parameters were valid but the request failed.
-403	Forbidden	The API key doesn’t have permissions to perform the request.
-404	Not Found	The requested resource doesn’t exist.
+| 402	| Request Failed |	The parameters were valid but the request failed. | |
+| 403	| Forbidden	| The API key doesn’t have permissions to perform the request. | |
+| 404	| Not Found	| The requested resource doesn’t exist. | |
