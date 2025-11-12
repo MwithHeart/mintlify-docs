@@ -35,7 +35,7 @@
   "paths": {
     "/api/pgs/payment/v2/createPayment": {
       "post": {
-        "summary": "Create payment channel",
+        "summary": "Create Payment Channel",
         "description": "This endpoint allows you to  initiate a payment transaction. It is the first endpoint that is called regardless of payment method to be used.",
         "operationId": "create-payment-channel",
         "requestBody": {
@@ -167,7 +167,7 @@
     },
     "/api/cps/v1/getTransactionStatus": {
       "post": {
-        "summary": "Get transaction status.",
+        "summary": "Get Transaction Status",
         "description": "This endpoint allows you to check the status of a transaction.",
         "operationId": "getTransactionStatus",
         "requestBody": {
@@ -295,7 +295,7 @@
     },
     "/api/pgs/payment/v1/makePayment": {
       "post": {
-        "summary": "Charge users through USSD",
+        "summary": "Charge Users Through USSD",
         "description": "This endpoint allows you to  initiate a payment transaction. It is the first endpoint that is called regardless of payment method to be used.",
         "operationId": "makePayment",
         "requestBody": {
