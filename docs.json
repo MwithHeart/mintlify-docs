@@ -55,7 +55,9 @@
           {
             "group": "Restructured pages",
             "pages": [ 
-              "rexpay-api/overview"
+              "rexpay-api/overview",
+              "rexpay-api/quickstart",
+              "rexpay-api/errors"
             ]
           }
   
