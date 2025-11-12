@@ -88,6 +88,10 @@
       {
         "label": "GitHub",
         "href": "https://github.com/mwithheart/mintlify-docs"
+      },
+      {
+        "label": "Main Portfolio",
+        "href": "https://writetech-accelerator-portfolio-mar.vercel.app"
       }
     ],
     "primary": {
