@@ -47,7 +47,7 @@
         "tab": "RexPay API",
         "groups": [
           {
-            "group": "Opening",
+            "group": " ",
             "pages": [
               "rexpay-api/introduction"
             ]
@@ -60,8 +60,9 @@
             ]
           },
           {
-            "group": "API Reference",
-            "openapi" : "api-reference/openapi.json"
+            "group": " ",
+            "openapi" : "api-reference/openapi.json",
+            "expanded": true
           }
         ]
       }
