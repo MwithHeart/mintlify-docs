@@ -198,7 +198,7 @@
                   "type": "object",
                   "properties": {
                     "amount": {
-                      "type": "number",
+                      "type": "string",
                       "example": "230,000.06"
                     },
                     "paymentReference": {
@@ -206,7 +206,7 @@
                       "example": "sm23oyr1122"
                     },
                     "transactionDate": {
-                      "type": "number",
+                      "type": "string",
                       "format": "date",
                       "example": "06/10/2023"
                     },
@@ -219,11 +219,11 @@
                       "example": "NGN"
                     },
                     "responseCode": {
-                      "type": "string",
+                      "type": "integer",
                       "example": 0
                     },
                     "responseDescription": {
-                      "type": "integer",
+                      "type": "string",
                       "example": "Transaction Successful"
                     }
                   }
@@ -296,7 +296,7 @@
     "/api/pgs/payment/v1/makePayment": {
       "post": {
         "summary": "Charge Users Through USSD",
-        "description": "This endpoint allows you to  initiate a payment transaction. It is the first endpoint that is called regardless of payment method to be used.",
+        "description": "This endpoint allows users to make payments using Unstructured Supplementary Service Data (USSD).",
         "operationId": "makePayment",
         "requestBody": {
           "required": false,
