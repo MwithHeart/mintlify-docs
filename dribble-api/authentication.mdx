@@ -99,7 +99,7 @@ Here’s how the Dribbble OAuth flow works:
         }
         ```
 
-### Handle common errors
+### Handle Common Errors
 
 | Error             | Description                   | How to fix                         |
 | ----------------- | ----------------------------- | ---------------------------------- |
@@ -109,12 +109,12 @@ Here’s how the Dribbble OAuth flow works:
 | `400 Bad Request` | Missing required parameter    | Verify your query parameters       |
 | `Redirect URI Mismatch` | Redirect URI doesn't match the previous one | Provide a redirect_uri that matches what you registered or leave out this parameter to use the default one registered with your application |
 
-### Token management tips
+### Token Management Tips
 - **Tokens typically don’t expire quickly**, but can be revoked anytime via your Dribbble account.
 - Always **use HTTPS** to keep tokens secure in transit.
 
 
-### Next steps
+### Next Steps
     <CardGroup cols={2}>
 
     <Card title="Quickstart" icon="square-code" href="./quickstart">
