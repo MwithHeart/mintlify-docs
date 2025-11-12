@@ -54,16 +54,25 @@
           },
           {
             "group": "Restructured pages",
+            "openapi" : "api-reference/openapi.json",
             "pages": [ 
               "rexpay-api/overview",
-              "rexpay-api/quickstart",
               "rexpay-api/errors"
             ]
           }
-  
         ]
       }
     ]
+  },
+  "api": {
+    "playground": {
+      "display": "interactive"
+    },
+    "examples": {
+      "languages": ["curl", "python", "javascript", " ruby", "go", "java", "csharp"],
+      "defaults": "required",
+      "prefill": true
+    }
   },
   "logo": {
     "light": "/logo/MwithHeart.svg",

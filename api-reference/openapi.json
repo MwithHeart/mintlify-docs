@@ -1,0 +1,429 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "RexPay API Documentation",
+    "description": "An unofficial documentation for using the RexPay API.",
+    "version": "1.0.0"
+  },
+
+  "servers": [
+    { 
+      "url": "https://charge-payment.com/v1",
+      "description": "Production server"
+    }
+  ],
+  "tags": [
+    {
+      "name": "Charge",
+      "description": "Operations related to charging users through different payment options"
+    }
+  ],
+  "components": {
+    "securitySchemes": {
+      "basicAuth": {
+        "type": "http",
+        "scheme": "basic"
+      }
+    }
+  },
+  "security": [
+    {
+      "basicAuth": []
+    }
+  ],
+  
+  "paths": {
+    "/api/pgs/payment/v2/createPayment": {
+      "post": {
+        "summary": "Create payment channel",
+        "description": "This endpoint allows you to  initiate a payment transaction. It is the first endpoint that is called regardless of payment method to be used.",
+        "operationId": "create-payment-channel",
+        "requestBody": {
+          "required": false,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "reference": {
+                    "description": "Unique Transaction Reference Number",
+                    "type": "string"
+                  },
+                  "userId": {
+                    "type": "string",
+                    "description": "Customer reference"
+                  },
+                  "amount": {
+                    "type": "string",
+                    "description": "The transaction amount"
+                  },
+                  "currency": {
+                    "type": "string",
+                    "description": "The transaction currency"
+                  },
+                  "callbackURL": {
+                    "type": "string",
+                    "description": "Callback URL on transaction completed"
+                  },
+                  "isV2": {
+                    "type": "boolean",
+                    "description": "The version of the API called"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Transaction Successful",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "reference": {
+                      "type": "number",
+                      "example": 143379339129,
+                      "description": "Unique Transaction Reference Number"
+                    },
+                    "clientId": {
+                      "type": "string",
+                      "example": "admintest7",
+                      "description": "Client unique ID"
+                    },
+                    "paymentUrl": {
+                      "type": "string",
+                      "example": "https://sandbox.globalaccelerex.com:6038/pay/16661108ZjGG7aY39B",
+                      "description": "Payment URL from the payment provider"
+                    },
+                    "status": {
+                      "type": "string",
+                      "example": "CREATED",
+                      "description": "Payment Status"
+                    },
+                    "paymentChannel": {
+                      "type": "string",
+                      "example": "DEFAULT",
+                      "description": "Payment channel"
+                    },
+                    "paymentUrlReference": {
+                      "type": "string",
+                      "example": "16661108ZjGG7aY39B",
+                      "description": "Payment unique reference"
+                    },
+                    "externalPaymentReference": {
+                      "type": "string",
+                      "example": "16661108ZjGG7aY39B",
+                      "description": "External Payment unique reference"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad message error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "status": {
+                      "type": "string",
+                      "example": "Unexpected value sent for field paymentChannel"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "responseMessage": {
+                      "type": "string",
+                      "example": "Unauthorised access to resource"
+                    },
+                    "responseCode": {
+                      "type": "integer",
+                      "example": "01"
+                    },
+                    "responseStatus": {
+                      "type": "string",
+                      "example": "FAILED"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/cps/v1/getTransactionStatus": {
+      "post": {
+        "summary": "Get transaction status.",
+        "description": "This endpoint allows you to check the status of a transaction.",
+        "operationId": "getTransactionStatus",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "required": [
+                  "transactionReference"
+                ],
+                "properties": {
+                  "transactionReference": {
+                    "type": "string",
+                    "example": "sm23oyr1122"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Transaction Successful",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "amount": {
+                      "type": "number",
+                      "example": "230,000.06"
+                    },
+                    "paymentReference": {
+                      "type": "string",
+                      "example": "sm23oyr1122"
+                    },
+                    "transactionDate": {
+                      "type": "number",
+                      "format": "date",
+                      "example": "06/10/2023"
+                    },
+                    "fees": {
+                      "type": "number",
+                      "example": 0.06
+                    },
+                    "currency": {
+                      "type": "string",
+                      "example": "NGN"
+                    },
+                    "responseCode": {
+                      "type": "string",
+                      "example": 0
+                    },
+                    "responseDescription": {
+                      "type": "integer",
+                      "example": "Transaction Successful"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad request - Error in the request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "status": {
+                      "type": "string",
+                      "example": "error"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "responseMessage": {
+                      "type": "string",
+                      "example": "Unauthorised access to resource"
+                    },
+                    "responseCode": {
+                      "type": "integer",
+                      "example": "01"
+                    },
+                    "responseStatus": {
+                      "type": "string",
+                      "example": "FAILED"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden - Access to this request is forbidden.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "status": {
+                      "type": "string"
+                    },
+                    "error": {
+                      "type": "string",
+                      "example": "Access to this resource is forbidden."
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/pgs/payment/v1/makePayment": {
+      "post": {
+        "summary": "Charge users through USSD",
+        "description": "This endpoint allows you to  initiate a payment transaction. It is the first endpoint that is called regardless of payment method to be used.",
+        "operationId": "makePayment",
+        "requestBody": {
+          "required": false,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "reference": {
+                    "description": "Unique Transaction Reference Number",
+                    "type": "string"
+                  },
+                  "userId": {
+                    "type": "string",
+                    "description": "Customer reference"
+                  },
+                  "amount": {
+                    "type": "string",
+                    "description": "The transaction amount"
+                  },
+                  "currency": {
+                    "type": "string",
+                    "description": "The transaction currency"
+                  },
+                  "callbackURL": {
+                    "type": "string",
+                    "description": "Callback URL on transaction completed"
+                  },
+                  "isV2": {
+                    "type": "boolean",
+                    "description": "The version of the API called"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Transaction Successful",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "reference": {
+                      "type": "number",
+                      "example": 143379339129,
+                      "description": "Unique Transaction Reference Number"
+                    },
+                    "clientId": {
+                      "type": "string",
+                      "example": "admintest7",
+                      "description": "Client unique ID"
+                    },
+                    "paymentUrl": {
+                      "type": "string",
+                      "example": "https://sandbox.globalaccelerex.com:6038/pay/16661108ZjGG7aY39B",
+                      "description": "Payment URL from the payment provider"
+                    },
+                    "status": {
+                      "type": "string",
+                      "example": "CREATED",
+                      "description": "Payment Status"
+                    },
+                    "paymentChannel": {
+                      "type": "string",
+                      "example": "DEFAULT",
+                      "description": "Payment channel"
+                    },
+                    "paymentUrlReference": {
+                      "type": "string",
+                      "example": "16661108ZjGG7aY39B",
+                      "description": "Payment unique reference"
+                    },
+                    "externalPaymentReference": {
+                      "type": "string",
+                      "example": "16661108ZjGG7aY39B",
+                      "description": "External Payment unique reference"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad message error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "status": {
+                      "type": "string",
+                      "example": "Unexpected value sent for field paymentChannel"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "responseMessage": {
+                      "type": "string",
+                      "example": "Unauthorised access to resource"
+                    },
+                    "responseCode": {
+                      "type": "integer",
+                      "example": "01"
+                    },
+                    "responseStatus": {
+                      "type": "string",
+                      "example": "FAILED"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
