@@ -25,37 +25,38 @@ Welcome to the RexPay API documentation, where businesses accept payments seamle
 
 ### Step 2: Make your first API call
 <AccordionGroup>
-  <Accordion title= "Use an endpoint to check payment details">
-    Use the **Get Transaction Status** endpoint to check payment details.
+  <Accordion title= "Use the 'Get Transaction Status' endpoint to check payment details.">
+    1. Paste the following code into your command line:
 
-    ```bash
-    curl -X POST https://pgs-sandbox.globalaccelerex.com/api/pgs/payment/v2/createPayment \
-      -u "your_email@example.com:your_secret_key" \
-      -H "Content-Type: application/json" \
-      -d '{
-        "reference": "INV-10001",
-        "userId": "ga",
-        "amount": 10000,
-        "currency": "NGN",
-        "customer": {
-          "email": "customer@example.com",
-          "name": "Jane Doe"
-        }
-      }'
-    ```
-
-    **Expected Response:**
-
-      ```json
-      {
-        "status": "success",
-        "message": "Payment initialized successfully",
-        "data": {
-          "paymentUrl": "https://pay.rexpay.com/checkout/xyz123",
-          "reference": "INV-10001"
-        }
-      }
+      ```bash
+      curl -X POST https://pgs-sandbox.globalaccelerex.com/api/pgs/payment/v2/createPayment \
+        -u "your_email@example.com:your_secret_key" \
+        -H "Content-Type: application/json" \
+        -d '{
+          "reference": "INV-10001",
+          "userId": "ga",
+          "amount": 10000,
+          "currency": "NGN",
+          "customer": {
+            "email": "customer@example.com",
+            "name": "Jane Doe"
+          }
+        }'
       ```
+
+    2. You should get a response similar to the following:
+
+        ```json
+        {
+          "status": "success",
+          "message": "Payment initialized successfully",
+          "data": {
+            "paymentUrl": "https://pay.rexpay.com/checkout/xyz123",
+            "reference": "INV-10001"
+          }
+        }
+        ```
+        The payment status was returned as **Success** which means the payemnt went thrugh.
   </Accordion>
 </AccordionGroup>
 
@@ -63,7 +64,7 @@ Welcome to the RexPay API documentation, where businesses accept payments seamle
 
 ## Next Steps
 
-✅ You have successfully made an API call. Now, consider exploring these key features:
+✅ Now that you have successfully made an API call, consider exploring these key features:
 
 <CardGroup cols={2}>
 

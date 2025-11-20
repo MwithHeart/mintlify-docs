@@ -1,0 +1,94 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "Love API Documentation",
+    "description": "Welcome to the official documentation of the Love API, a beautifully engineered integration by the Lord of the worlds - the One who created love Himself",
+    "version": "1.0.0"
+  },
+
+  "servers": [
+    { 
+      "url": "https://love-api.com/v1",
+      "description": "Production server"
+    }
+  ],
+  "tags": [
+    {
+      "name": "Heart",
+      "description": "Operations related to matters of the heart"
+    }
+  ],
+  "components": {
+    "securitySchemes": {
+      "basicAuth": {
+        "type": "http",
+        "scheme": "basic"
+      }
+    }
+  },
+  "security": [
+    {
+      "basicAuth": []
+    }
+  ],
+  
+  "paths": {
+    "/api/nikkah": {
+      "post": {
+        "summary": " 💖 Merge Two Hearts 💖",
+        "description": "This endpoint allows you to initiate a halal union between two souls.",
+        "operationId": "merge-in-halal",
+        "requestBody": {
+          "required": false,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "bride": {
+                    "description": "A miss hijabee",
+                    "type": "string",
+                    "example": "Maryam"
+                  },
+                  "groom": {
+                    "type": "string",
+                    "description": "An 'abd of Allah",
+                    "example": "Fuad"
+                  },
+                  "date": {
+                    "type": "string",
+                    "description": "The blessed date of union",
+                    "example": "2025-12-12"
+                  },
+                  "venue": {
+                    "type": "string",
+                    "description": "The location of the union",
+                    "example": "FUNAAB Car Park, Abeokuta"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success - Hearts United in Halal Bond 💙",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "message": {
+                      "type": "string",
+                      "example": "You're invited!"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+  }
+} 
+  }
+}
