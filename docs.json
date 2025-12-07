@@ -66,6 +66,23 @@
             "expanded": true
           }
         ]
+      },
+      {
+        "tab": "Love API",
+        "groups": [
+          {
+            "group": " ",
+            "pages": [
+              "love-api/overview",
+              "love-api/introduction"
+            ]
+          },
+          {
+            "group": " ",
+            "openapi" : "api-reference/openapi-love.json",
+            "expanded": true
+          }
+        ]
       }
     ]
   },
